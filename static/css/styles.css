@@ -1,0 +1,9 @@
+@import 'includes/util/reset.css';
+@import 'includes/util/variables.css';
+@import 'includes/util/main.css';
+
+@import 'includes/navbar.css';
+
+@import 'includes/post.css';
+
+@import 'includes/footer.css';

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section>
+    <header>
+        <h2>Todos os Posts</h2>
+    </header>
+    {% for post in posts %}
+    <article class="card-post">
+        <header>
+            <h3>{{post.title}}</h3>
+            <h5>Autor: {{post.author.get_full_name}}</h5>
+        </header>
+        <p>{{post.resume}}</p>
+    </article>
+    {% endfor %}
+</section>
+
+{% endblock content %}
