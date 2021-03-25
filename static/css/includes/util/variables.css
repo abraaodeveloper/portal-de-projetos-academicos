@@ -1,3 +1,6 @@
 :root {
-    --secondary-color: rgb(207, 207, 207);
+    --primary-color: rgb(87, 141, 148);
+    --secondary-color: rgb(53, 52, 65);
+    --danger-color: rgb(146, 37, 37);
+    --success-color: rgb(55, 195, 36);
 }

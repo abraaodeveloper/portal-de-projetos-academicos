@@ -1,0 +1,71 @@
+.content-altentication {
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+}
+
+.content-altentication .altentication-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+
+    background-color: var(--primary-color);
+    padding: 5em;
+    width: 50%;
+}
+.content-altentication .altentication-page h2 {
+    margin-bottom: 3em;
+}
+
+.content-altentication .altentication-page ul > li {
+    font-size: small;
+}
+
+.content-altentication .altentication-page form {
+    width: 90%;
+}
+.content-altentication .altentication-page p {
+    display: flex;
+    flex-direction: column;
+}
+.content-altentication .altentication-page h2 {
+    margin: auto;
+}
+
+.content-altentication .altentication-page label {
+    font-weight: 600;
+    margin: 0.2em;
+    color: #fff;
+}
+
+.content-altentication .altentication-page input {
+    padding: 12px;
+    margin-bottom: 2em;
+    border-radius: 0.3em;
+    border: 0;
+    background-color: rgb(175, 175, 175);
+    
+}
+.content-altentication .altentication-page input:focus {
+    border: 2px solid #fdf;
+    padding: 10px;
+}
+
+.content-altentication .altentication-page button {
+    display: grid;
+    background-color: rgb(55, 195, 36);
+    margin-left: 1em 0em 1em 0em;
+    color: #fff;
+    padding: 1em;
+    width: 100%;
+    border-radius: 0.3em;
+    border: 0;
+}
+
+.content-altentication .altentication-page #waves-altentication {
+    width: 60%;
+    padding: 50px;
+}
