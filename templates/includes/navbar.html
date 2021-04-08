@@ -1,45 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Artigos</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Mais
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="nav-logo">
+                    <div class="user">
+                        <img src="./img/main-screen/user.svg" alt="user">
+                    </div>
+                <div class="logo">
+                    <h1>UPEProjects</h1>
                 </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-        </ul>
-        <div class="form-inline my-2 my-lg-0">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    {% if user.is_authenticated %}
-                <li><a class="txt-user nav-item active">Oi {{ user.username }}!</a></li>
-                <li><a href="{% url 'logout' %}">Log Out</a></li>
-                {% else %}
-                <li class="nav-item active"><a class=" btn btn-light my-2" href="{% url 'login' %}">Entrar</a></li>
-                <li class="nav-item active" id="btn-register"><a class="btn btn-primary my-2" href="{% url 'signup' %}">Resgistrar-se</a></li>
-                {% endif %}
-            </ul>
+            </div>
+        </a>
+        <div class="nav-items">
+            <div class="list">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Projetos</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Colaborar</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+        </div>
+    </nav>
+</header>

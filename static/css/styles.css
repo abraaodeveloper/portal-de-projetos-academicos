@@ -1,6 +1,7 @@
 @import 'includes/util/reset.css';
 @import 'includes/util/variables.css';
 @import 'includes/util/main.css';
+@import 'includes/util/body.css';
 
 @import 'includes/navbar.css';
 
