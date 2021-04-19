@@ -1,0 +1,112 @@
+:root{
+    --azul-background: #395d73d5;
+    --background: #ffffff93;
+    --verde-button: #5FCE6A;
+    --label: #F5F5F5;
+    --paragraph-border: #A7CBD9;
+
+    --text-font:'Bebas Neue', cursive;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+    font-family: var(--text-font);
+    font-size: 18px;
+}
+
+body{
+    background: var(--background);
+    color: var(--label);
+}
+
+input{
+    background: #395d7300;
+    height: 35px;
+
+    border: 1px solid var(--paragraph-border);
+    border-radius: 5px;
+
+    font-family: 'Roboto';
+    font-size: 15px;
+    color: var(--label);
+}
+input:placeholder-shown{
+    font-style: italic;
+}
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.elements-container{
+    margin-top: 22vh;
+    background-color: var(--azul-background);
+
+    width: 300px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 20px;
+}
+
+.button-container{
+    background: var(--verde-button);
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    padding-right: 40px;
+    padding-left: 40px;
+
+    border-radius: 6px;
+
+    margin-top: 60px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+.button-container:hover{
+    background: #395d7300;
+    border: 1.5px solid var(--verde-button);
+}
+
+.button-container a{
+    color: var(--label);
+}
+
+.signin-text{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.signin-text p{
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    padding-right: 60px;
+    padding-left: 60px;
+
+    border: 1px solid var(--paragraph-border);
+    border-radius: 5px;
+}
+.space{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.label-one{
+    margin-right: 35px;
+}
+.label-two{
+    margin-right: 10px;
+}
+.element-two{
+    margin-top: 20px;
+}
