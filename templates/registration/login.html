@@ -1,63 +1,37 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-
-  <link rel="stylesheet" href="/static/css/includes/signin.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
-</head>
-<body>
-  <!-- Colocar Navbar -->
-
-  <div class="login-container">
-    <div class="elements-container">
-      <div class="signin-text">
-        <p>Entrar</p>
-      </div>
-      <form>
-        <div class="space row mb-3">
-          <label for="inputEmail3" class="col-sm-2 col-form-label label-one">Email:</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="joao@upe.br">
-          </div>
-        </div>
-        <div class="space row mb-3 element-two">
-          <label for="inputPassword3" class="col-sm-2 col-form-label label-two">Password:</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="jo@o27128!">
-          </div>
-        </div>
-        </form>
-        <div class="button-container">
-          <a href="#">Entrar</a>
-        </div>
-    </div>
-  </div>
-</body>
-</html>
-
-<!--{% extends 'base.html' %}
+{% extends 'base.html' %}
 {% block title %}Entrar{% endblock %}
 
 {% load static %}
 
 {% block content %}
-
-<div class="content-altentication container">
-  <span class="altentication-page form-group">
-    <h2>Entrar</h2>
+<div class="login-container">
+  <div class="elements-container">
+    <div class="signin-text">
+      <p>Entrar</p>
+    </div>
     <form method="post">
       {% csrf_token %}
       {{ form.as_p }}
       <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
-  </span>
+    <form>
+      <div class="space row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label label-one">Email:</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="inputEmail3" placeholder="joao@upe.br">
+        </div>
+      </div>
+      <div class="space row mb-3 element-two">
+        <label for="inputPassword3" class="col-sm-2 col-form-label label-two">Password:</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword3" placeholder="jo@o27128!">
+        </div>
+      </div>
+      </form>
+      <div class="button-container">
+        <a href="#">Entrar</a>
+      </div>
+  </div>
 </div>
 
-
 {% endblock %}
--->
