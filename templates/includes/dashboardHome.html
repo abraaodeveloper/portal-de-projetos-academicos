@@ -1,61 +1,26 @@
-<div id="projetos" class="dashboard-container">
+<div id="projetos" class="container mt-5">
     <div class="text-projects">
         <p>Projetos mais vistos</p>
     </div>
-    <div class="projects">
-        <div class="project-one">
-            <div class="squad">
-                <div class="img-project">
-                    <img src="/static/img/imgHome/img-test.jpg" alt="">
-                </div>
-                <div class="text-project">
-                    <p>
-                        It is a long established fact that a reader will be distracted by the readable 
-                        content of a page when looking at its layout. The point of us.
-                    </p>
-                </div>
-                <div class="views">
-                    <p>
-                        300 visualizações
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="project-two">
-            <div class="squad">
-                <div class="img-project">
-                    <img src="/static/img/imgHome/img-test.jpg" alt="">
-                </div>
-                <div class="text-project">
-                    <p>
-                        It is a long established fact that a reader will be distracted by the readable 
-                        content of a page when looking at its layout. The point of us.
-                    </p>
-                </div>
-                <div class="views">
-                    <p>
-                        300 visualizações
-                    </p>
+    <div class="d-flex justify-content-between">
+        {% for post in posts %}
+        <div class="projects">
+            <div class="">
+                <div class="squad">
+                    <div class="img-project">
+                        <img src="/static/img/imgHome/img-test.jpg" alt="">
+                    </div>
+                    <div class="text-project">
+                        <a href="/project/{{post.slug}}">{{post.title}}</a>
+                        
+                        <p>{{post.description}}</p>
+                    </div>
+                    <div class="views">
+                        <p>{{post.views}} visualizações</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="project-three">
-            <div class="squad">
-                <div class="img-project">
-                    <img src="/static/img/imgHome/img-test.jpg" alt="">
-                </div>
-                <div class="text-project">
-                    <p>
-                        It is a long established fact that a reader will be distracted by the readable 
-                        content of a page when looking at its layout. The point of us.
-                    </p>
-                </div>
-                <div class="views">
-                    <p>
-                        300 visualizações
-                    </p>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>

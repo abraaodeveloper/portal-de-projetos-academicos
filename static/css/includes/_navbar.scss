@@ -1,0 +1,96 @@
+/*Navbar*/
+.navbar {
+    background: var(--cinza-escuro);
+
+    .nav-logo {
+        display: flex;
+        flex-direction: row;
+
+        .user img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo {
+            font-family: var(--bebas-font);
+            color: var(--azul-claro);
+
+            margin-left: 10px;
+
+            h1 {
+                font-size: 36px;
+            }
+        }
+        #m-card-user {
+            position: fixed;
+            top: 70px;
+            z-index: 2;
+            background-color: #a7cbd9;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                margin: .1em;
+                padding: .5em;
+
+                li{
+                    display: flex;
+                    flex-direction: column;
+
+                    img{
+                        width: 40px;
+                        margin: 1em auto 0 auto;
+                    }
+
+                    p{
+                        color: #fff;
+                        margin: 0 auto .6em auto;
+                    }
+                }
+
+                .btn-card-user{
+                    border: 2px solid #fff;
+                    border-radius: 0.3em;
+                    margin: .3em;
+
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                        text-align: center;
+                        font-size: 20px;
+                        padding: 0 1em 0 1em;
+
+                        transition: 0.3s ease all;
+                    }
+                }
+            }
+        }
+    }
+
+    .list ul {
+        display: flex;
+        flex-direction: row;
+
+        a {
+            text-decoration: none;
+            color: var(--cinza-claro);
+
+            font-size: 20px;
+            margin: 0 20px 0 20px;
+
+            transition: 0.3s ease all;
+
+            &:hover {
+                color: var(--azul-claro);
+
+                border: 1px solid var(--cinza-claro);
+                border-top: none;
+                border-left: none;
+                border-right: none;
+
+                padding-bottom: 3px;
+            }
+        }
+    }
+}

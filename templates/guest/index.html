@@ -2,36 +2,44 @@
 
 {% block content %}
 
-<section>
-  <div class="carousel-container">
+<input type="hidden" name="users" value="{{users}}">
+
+<div class="carousel-container">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active btn-next" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="btn-next" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="btn-next" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                class="active btn-next" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="btn-next"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="btn-next"
+                aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/static/img/imgHome/img1.jpg" class="d-block w-100" style="object-fit: cover;" alt="...">
-            <div class="text carousel-caption d-none d-md-block">
-              <p>Seja bem-vindo ao Observatório de Projetos da Universidade de Pernambuco</p>
+            <div class="carousel-item active">
+                <img src="/static/img/imgHome/img1.jpg" class="d-block w-100" style="object-fit: cover;" alt="...">
+                <div class="text carousel-caption d-none d-md-block">
+                    <p>Seja bem-vindo ao Observatório de Projetos da Universidade de Pernambuco</p>
+                </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <a href="#"><img src="/static/img/imgHome/img2.jpg" class="d-block w-100" style="object-fit: cover;" alt="..."></a>
-            <div class="text carousel-caption d-none d-md-block">
-              <p><a href="#">Veja as novidades em projetos de software</a></p>
+            <div class="carousel-item">
+                <a href="#"><img src="/static/img/imgHome/img2.jpg" class="d-block w-100" style="object-fit: cover;"
+                        alt="..."></a>
+                <div class="text carousel-caption d-none d-md-block">
+                    <p><a href="#">Veja as novidades em projetos de software</a></p>
+                </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <a href="#"><img src="/static/img/imgHome/img3.jpg" class="d-block w-100" style="object-fit: cover;" alt="..."></a>
-            <div class="text carousel-caption d-none d-md-block">
-              <p><a href="#">Veja as novidades em Livros</a></p>
+            <div class="carousel-item">
+                <a href="#"><img src="/static/img/imgHome/img3.jpg" class="d-block w-100" style="object-fit: cover;"
+                        alt="..."></a>
+                <div class="text carousel-caption d-none d-md-block">
+                    <p><a href="#">Veja as novidades em Livros</a></p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 </div>
-</section>
+
+{% include "includes/dashboardHome.html" %}
+{% include "includes/main.html" %}
 
 {% endblock content %}

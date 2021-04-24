@@ -1,17 +1,37 @@
 <header>
     <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <div class="nav-logo">
+            <div class="nav-logo d-flex d-flex-row">
+                <div class="user">
                     <div class="user">
                         <img src="/static/img/imgHome/user.svg" alt="user">
                     </div>
+                </div>
+
                 <div class="logo">
                     <h1>UPEProjects</h1>
                 </div>
+
+                <div class="card" id="m-card-user">
+                    <ul>
+                        {% if user.is_authenticated %}
+                        <li class="info-user-nav">
+                            <img src="/static/img/imgHome/user-white.svg" alt="user">
+                            <p>Olá, {{ user.username }}!</p>
+                        </li>
+                        <li class="btn-card-user"><a class="txt-user">Oi {{ user.username }}!</a></li>
+                        <li class="btn-card-user"><a href="{% url 'logout' %}" style="color: red;">Sair</a></li>
+                        {% else %}
+                        <li class="info-user-nav">
+                            <img src="/static/img/imgHome/user-white.svg" alt="user">
+                            <p>Olá, visitante!</p>
+                        </li>
+                        <li class="btn-card-user"><a href="{% url 'login' %}">Entrar</a></li>
+                        <li class="btn-card-user" id="btn-register"><a href="{% url 'signup' %}">Resgistrar-se</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
-        </a>
-        <div class="nav-items">
             <div class="list">
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -21,7 +41,6 @@
                     <li><a href="#">Colaborar</a></li>
                 </ul>
             </div>
-        </div>
         </div>
     </nav>
 </header>

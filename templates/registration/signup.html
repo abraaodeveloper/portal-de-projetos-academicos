@@ -5,14 +5,15 @@
 
 {% block content %}
 
-<div class="content-altentication">
-  <span class="altentication-page">
+<div class="m-container-login">
+  <div class="m-card-login">
     <h2>Registro</h2>
     <form method="post">
       {% csrf_token %}
       {{ form.as_p }}
-      <button type="submit">Registrar-se</button>
+      <button type="submit" class="btn btn-primary">Registrar-se</button>
     </form>
-  </span>
+  </div>
 </div>
+
 {% endblock %}
