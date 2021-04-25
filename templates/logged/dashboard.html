@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="m-5 d-flex justify-content-between">
+        <h1>Olá, {{ user.username }}!</h1>
+        <div>
+            <a class="btn btn-outline-success" href="/createpost/">Cadastrar um novo projeto</a>
+        </div>
+    </div>
+    <hr class="dropdown-divider">
+    <div class="d-flex justify-content-evenly mt-5">
+        {% for post in posts %}
+        <div class="projects">
+            <div class="">
+                <div class="squad">
+                    <div class="img-project">
+                        <img src="/static/img/imgHome/img-test.jpg" alt="">
+                    </div>
+                    <div class="text-project">
+                        <a href="/project/{{post.slug}}">{{post.title}}</a>
+
+                        <p>{{post.description}}</p>
+                    </div>
+                    <div class="views">
+                        <p>{{post.views}} visualizações</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
