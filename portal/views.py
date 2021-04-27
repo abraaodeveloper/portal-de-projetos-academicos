@@ -19,8 +19,20 @@ def home(request):
             menor = post
     print(menor.views)
     '''
-    users = User.objects.all() 
-    return render(request, 'guest/index.html', {'posts': posts, 'users': users.count()})
+    users = User.objects.all()
+    qtdAcess = 0
+    qtdProjetcSoft = 0
+    qtdProjetcEbook = 0
+    for user in users:
+        userPosts = user.post_set.all()
+        for post in userPosts:
+            qtdAcess += post.views
+            if (post.type_content == 'ebook'):
+                qtdProjetcSoft += 1
+            if (post.type_content == 'software'):
+                qtdProjetcEbook += 1
+
+    return render(request, 'guest/index.html', {'posts': posts, 'users': users.count(), 'qtdAcess': qtdAcess, 'qtdProjetcSoft': qtdProjetcSoft, 'qtdProjetcEbook': qtdProjetcEbook})
 
 def project(request, post_slug):
     post = Post.objects.get(slug=post_slug)

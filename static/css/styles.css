@@ -135,6 +135,7 @@ body {
 .navbar .nav-logo .user img {
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
 
 .navbar .nav-logo .logo {
@@ -529,6 +530,13 @@ hr {
   border-radius: 10px;
 }
 
+.squad:hover {
+  cursor: pointer;
+  color: var(--cinza-escuro);
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+}
+
 .img-project img {
   width: 250px;
   height: 100px;
@@ -589,5 +597,48 @@ hr {
   font-family: 'Roboto';
   font-weight: bold;
   font-size: 12px;
+}
+
+.bar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid var(--azul-claro);
+  border-radius: 10px;
+  width: 1125px;
+  margin-top: 40px;
+}
+
+.dashboard-bar p {
+  text-align: center;
+  font-size: 18px;
+  color: var(--cinza-escuro);
+}
+
+.text-bar {
+  margin-top: 20px;
 }
 /*# sourceMappingURL=styles.css.map */
