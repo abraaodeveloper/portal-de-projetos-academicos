@@ -3,13 +3,13 @@
         <div class="container">
             <div class="nav-logo d-flex d-flex-row">
                 <div class="user">
-                    <div class="user">
+                    <div class="user" style="cursor: pointer;">
                         <img src="/static/img/imgHome/user.svg" id="icon-user" alt="user">
                     </div>
                 </div>
 
                 <div class="logo">
-                    <h1>UPEProjects</h1>
+                    <a href="/"><h1 style="color: #F5F5F5;">UPEProjects</h1></a>
                 </div>
 
                 <div class="card" id="m-card-user">
@@ -34,11 +34,18 @@
             </div>
             <div class="list">
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li><a href="/dashboard/">Colaborar</a></li>
+                    <li class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Projetos<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                            <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                          </svg></button>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a href="/projects/software">Softwares</a>
+                          <a href="/projects/ebook">E-books</a>
+                        </div>
+                    </li>
+                    <li><a class="m-item-menu" href="#sobre">Sobre</a></li>
+                    <li><a class="m-item-menu" href="#contato">Contato</a></li>
+                    <li><a class="m-item-menu" href="/dashboard/">Colaborar</a></li>
                 </ul>
             </div>
         </div>

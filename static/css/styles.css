@@ -215,7 +215,7 @@ body {
           flex-direction: row;
 }
 
-.navbar .list ul a {
+.navbar .list ul a, .navbar .list ul button {
   text-decoration: none;
   color: var(--cinza-claro);
   font-size: 20px;
@@ -224,13 +224,53 @@ body {
   transition: 0.3s ease all;
 }
 
-.navbar .list ul a:hover {
-  color: var(--azul-claro);
+.navbar .list ul a:hover, .navbar .list ul button:hover {
   border: 1px solid var(--cinza-claro);
   border-top: none;
   border-left: none;
   border-right: none;
   padding-bottom: 3px;
+}
+
+.navbar .list ul .m-item-menu:hover {
+  color: #A7CBD9;
+}
+
+.dropbtn {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #395D73;
+  border-radius: 0.5em;
+  overflow: auto;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  border: 2px solid #F5F5F5;
+}
+
+.show {
+  display: block;
 }
 
 .m-container-login {
@@ -529,6 +569,13 @@ hr {
   border-radius: 10px;
 }
 
+.squad:hover {
+  cursor: pointer;
+  color: var(--cinza-escuro);
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+}
+
 .img-project img {
   width: 250px;
   height: 100px;
@@ -589,5 +636,48 @@ hr {
   font-family: 'Roboto';
   font-weight: bold;
   font-size: 12px;
+}
+
+.bar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid var(--azul-claro);
+  border-radius: 10px;
+  width: 1125px;
+  margin-top: 40px;
+}
+
+.dashboard-bar p {
+  text-align: center;
+  font-size: 18px;
+  color: var(--cinza-escuro);
+}
+
+.text-bar {
+  margin-top: 20px;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -22,6 +22,10 @@ def home(request):
     users = User.objects.all() 
     return render(request, 'guest/index.html', {'posts': posts, 'users': users.count()})
 
+def projects(request, type_content):
+    post = Post.objects.filter(type_content=type_content)
+    return render(request, 'guest/projects-list.html', {'posts': post})
+
 def project(request, post_slug):
     post = Post.objects.get(slug=post_slug)
     post.views = post.views + 1
