@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
+from django.core.files.storage import FileSystemStorage
 
 from .forms import *
 from .models import Post
@@ -11,7 +12,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 def home(request):
     posts = Post.objects.all().order_by('-views')[:3:1]
-    menor = posts[0]
+    #menor = posts[0]
     '''
     for post in posts:
         if post.views < menor.views:
@@ -40,11 +41,24 @@ def createPost(request):
     user = request.user
     posts = user.post_set.all()
 
+    context = {}
+    if request.method == 'POST':
+        if form.is_valid():
+            uploaded_file = request.FILES['document']
+            fs = FileSystemStorage()
+            name = fs.save(uploaded_file.name, uploaded_file)
+            context['url'] = fs.url(name)
+
+            form.instance.file_name = name
+            form.instance.author = request.user
+            form.instance.viwes = 0
+            form.save()
+    '''
     if request.method == 'POST':
         if form.is_valid():
             form.instance.author = request.user
             form.instance.viwes = 0
             form.save()
             return render(request, 'logged/dashboard.html', {'posts': posts})
-
+    '''
     return render(request, 'logged/post-edit.html', {'posts': posts, 'form':form})
