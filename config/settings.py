@@ -15,7 +15,6 @@ import os
 
 # Configure Django App for Heroku.
 import django_heroku
-django_heroku.settings(locals())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -138,3 +137,5 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 LOGIN_REDIRECT_URL = '/dashboard'
 
 LOGOUT_REDIRECT_URL = '/accounts/login'
+
+django_heroku.settings(locals())
