@@ -37,3 +37,23 @@ window.onclick = function (event) {
         }
     }
 }
+
+/// form cadaster
+
+const ik =  document.getElementById("id_keyword")
+const iqp =  document.getElementById("id_qtd_pages")
+const itc =  document.getElementById("id_type_content")
+/*
+ik.style.display = "none"
+iqp.style.display = "none"
+
+itc.onchange = function(){
+    if(itc.value == "ebook"){
+        ik.style.display = "block"
+        iqp.style.display = "block"
+    }else{
+        ik.style.display = "none"
+        iqp.style.display = "none"
+    }
+};
+*/

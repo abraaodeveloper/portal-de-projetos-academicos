@@ -57,6 +57,8 @@ def createPost(request):
             form.instance.author = request.user
             form.instance.viwes = 0
             form.save()
+
+            return render(request, 'logged/dashboard.html', {'posts': posts})
     '''
     if request.method == 'POST':
         if form.is_valid():

@@ -1,25 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="d-flex justify-content-between container mt-5">
-    {% for post in posts %}
-    <div class="projects">
-        <div class="">
-            <div class="squad">
-                <div class="img-project">
-                    <img src="/static/img/imgHome/img-test.jpg" alt="">
-                </div>
-                <div class="text-project">
-                    <a href="/project/{{post.slug}}">{{post.title}}</a>
-                    
-                    <p>{{post.description}}</p>
-                </div>
-                <div class="views">
-                    <p>{{post.views}} visualizações</p>
-                </div>
+<div class="">
+
+    <div class="container">
+        {% for post in posts %}
+        <div class="card m-2">
+            <div class="card-header">
+                {{post.type_content}}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{post.title}}</h5>
+                <a href="/project/{{post.slug}}">Ver {{post.title}}</a>
+                <h3>{{post.resume}}</h3>
+                <p class="card-text">{{post.content | safe}}</p>
+                <p>{{post.views}} visualizações</p>
+                <a href="{{post.file_name.url}}" class="btn btn-primary">Download</a>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 {% endblock content %}
