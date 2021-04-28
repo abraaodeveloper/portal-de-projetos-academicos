@@ -41,7 +41,7 @@ function move() {
         }
 
         //projetos de software
-        if(width >= projetosSoft){
+        if(width >= projetosSoft.value){
             clearInterval(id);
             i = 0;
         
@@ -51,7 +51,7 @@ function move() {
             elementoThree.innerHTML = width + " Projetos";
         }
         //Livros
-        if(width >= projetosBook){
+        if(width >= projetosBook.value){
             clearInterval(id);
             i = 0;
         
