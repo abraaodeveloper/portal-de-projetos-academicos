@@ -12,7 +12,7 @@
                     </div>
                     <div class="text-project">
                         <a href="/project/{{post.slug}}">{{post.title}}</a>
-                        
+
                         <p>{{post.description}}</p>
                     </div>
                     <div class="views">
@@ -24,6 +24,10 @@
         {% endfor %}
     </div>
     <div class="bar-container">
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+        
         <div class="dashboard-bar">
             <div class="bar-one">
                 <div class="text-bar">
@@ -33,17 +37,17 @@
             <div class="bar-two">
                 <div class="text-bar">
                     <p>Total de Contas</p>
-            </div>
+                </div>
             </div>
             <div class="bar-three">
                 <div class="text-bar">
                     <p>Total de Projetos de Software</p>
-            </div>
+                </div>
             </div>
             <div class="bar-four">
                 <div class="text-bar">
                     <p>Total de Livros</p>
-            </div>
+                </div>
             </div>
         </div>
     </div>
