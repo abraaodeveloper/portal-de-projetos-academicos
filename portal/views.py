@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
+
     softs = Soft.objects.all().order_by('-views')[:3:1]
     ebooks = Ebook.objects.all().order_by('-views')[:3:1]
 
@@ -69,12 +70,5 @@ def createSoft(request):
             form.save()
 
             return render(request, 'logged/dashboard.html', {'softs': softs})
-    '''
-    if request.method == 'POST':
-        if form.is_valid():
-            form.instance.author = request.user
-            form.instance.viwes = 0
-            form.save()
-            return render(request, 'logged/dashboard.html', {'posts': posts})
-    '''
+
     return render(request, 'logged/soft-edit.html', {'softs': softs, 'form':form})

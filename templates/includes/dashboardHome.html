@@ -14,8 +14,10 @@
                         <a href="/project/{{soft.slug}}">{{soft.title}}</a>                        
                         <p>{{soft.description}}</p>
                     </div>
+                    <a href="{{post.file_name.url}}">Download</a>
                     <div class="views">
                         <p>{{soft.views}} visualizações</p>
+
                     </div>
                 </div>
             </div>
@@ -30,23 +32,29 @@
         <div class="dashboard-bar">
             <div class="bar-one">
                 <div class="text-bar">
-                    <p>Total de Acessos</p>
+                    <input type="hidden" id="qtdAcess" value="{{qtdAcess}}">
+                    <p>Total de Acessos {{qtdAcess}}</p>
                 </div>
             </div>
             <div class="bar-two">
                 <div class="text-bar">
-                    <p>Total de Contas</p>
-                </div>
+
+                    <input type="hidden" id="qtdAccounts" value="{{users}}">
+                    <p>Total de Contas {{users}}</p>
+            </div>
             </div>
             <div class="bar-three">
                 <div class="text-bar">
-                    <p>Total de Projetos de Software</p>
-                </div>
+                    <input type="hidden" id="qtdProjetcSoft" value="{{qtdProjetcSoft}}">
+                    <p>Total de Projetos de Software {{qtdProjetcSoft}}</p>
+            </div>
             </div>
             <div class="bar-four">
                 <div class="text-bar">
-                    <p>Total de Livros</p>
-                </div>
+                    <input type="hidden" id="qtdProjetcEbook" value="{{qtdProjetcEbook}}">
+                    <p>Total de Livros {{qtdProjetcEbook}}</p>
+            </div>
+
             </div>
         </div>
     </div>
