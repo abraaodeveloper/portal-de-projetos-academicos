@@ -1,6 +1,8 @@
 from django.contrib import admin
 
-from portal.models import Post
+from portal.models import Soft, Ebook
+
 
 # Register your models here.
-admin.site.register(Post)
+admin.site.register(Soft)
+admin.site.register(Ebook)

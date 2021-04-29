@@ -4,18 +4,18 @@
 <div class="">
 
     <div class="container">
-        {% for post in posts %}
+        {% for soft in softs %}
         <div class="card m-2">
             <div class="card-header">
-                {{post.type_content}}
+                {{soft.type_content}}
             </div>
             <div class="card-body">
-                <h5 class="card-title">{{post.title}}</h5>
-                <a href="/project/{{post.slug}}">Ver {{post.title}}</a>
-                <h3>{{post.resume}}</h3>
-                <p class="card-text">{{post.content | safe}}</p>
-                <p>{{post.views}} visualizações</p>
-                <a href="{{post.file_name.url}}" class="btn btn-primary">Download</a>
+                <h5 class="card-title">{{soft.title}}</h5>
+                <a href="/project/{{soft.slug}}">Ver {{soft.title}}</a>
+                <h3>{{soft.resume}}</h3>
+                <p class="card-text">{{soft.content | safe}}</p>
+                <p>{{soft.views}} visualizações</p>
+                <a href="{{soft.file_name.url}}" class="btn btn-primary">Download</a>
             </div>
         </div>
         {% endfor %}
