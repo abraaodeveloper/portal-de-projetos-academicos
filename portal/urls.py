@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     # guest
     path('', views.home, name='home'),
-    path('project/<soft_slug>', views.project, name="project"),
+    path('project/<project_slug>', views.project, name="project"),
     path('projects/<type_content>', views.projects, name="projects"),
 
     # user logged

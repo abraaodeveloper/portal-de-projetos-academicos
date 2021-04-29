@@ -12,22 +12,32 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 def home(request):
     softs = Soft.objects.all().order_by('-views')[:3:1]
-    #menor = posts[0]
-    '''
-    for post in posts:
-        if post.views < menor.views:
-            menor = post
-    print(menor.views)
-    '''
-    users = User.objects.all() 
-    return render(request, 'guest/index.html', {'softs': softs, 'users': users.count()})
+    ebooks = Ebook.objects.all().order_by('-views')[:3:1]
+
+    result = softs + ebooks
+
+    if(not(len(result) < 3)):
+        cont = 0
+        while(cont < len(result)-1):
+            if(result[cont].views < result[cont+1].views):
+                key = result[cont]
+                result[cont] = result[cont+1]
+                result[cont+1] = key
+            cont +=1
+
+    print(result[:3:1])
+    users = User.objects.all()
+    return render(request, 'guest/index.html', {'posts': result, 'users': users.count()})
 
 def projects(request, type_content):
     softs = Soft.objects.filter(type_content=type_content)
     return render(request, 'guest/projects-list.html', {'softs': softs})
 
-def project(request, soft_slug):
+def project(request, project_slug):
     soft = Soft.objects.get(slug=soft_slug)
+    ebook = Ebook.objects.get(slug=soft_slug)
+    print(soft)
+    print(ebook)
     soft.views = soft.views + 1
     soft.save()
     return render(request, 'guest/project.html', {'soft': soft})
