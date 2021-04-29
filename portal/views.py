@@ -4,14 +4,14 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.core.files.storage import FileSystemStorage
 
 from .forms import *
-from .models import Post
+from .models import Soft, Ebook
 
 from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
 def home(request):
-    posts = Post.objects.all().order_by('-views')[:3:1]
+    softs = Soft.objects.all().order_by('-views')[:3:1]
     #menor = posts[0]
     '''
     for post in posts:
@@ -20,30 +20,30 @@ def home(request):
     print(menor.views)
     '''
     users = User.objects.all() 
-    return render(request, 'guest/index.html', {'posts': posts, 'users': users.count()})
+    return render(request, 'guest/index.html', {'softs': softs, 'users': users.count()})
 
 def projects(request, type_content):
-    post = Post.objects.filter(type_content=type_content)
-    return render(request, 'guest/projects-list.html', {'posts': post})
+    softs = Soft.objects.filter(type_content=type_content)
+    return render(request, 'guest/projects-list.html', {'softs': softs})
 
-def project(request, post_slug):
-    post = Post.objects.get(slug=post_slug)
-    post.views = post.views + 1
-    post.save()
-    return render(request, 'guest/project.html', {'post': post})
+def project(request, soft_slug):
+    soft = Soft.objects.get(slug=soft_slug)
+    soft.views = soft.views + 1
+    soft.save()
+    return render(request, 'guest/project.html', {'soft': soft})
 
 # crud post
 @login_required
 def dashboard(request):
     user = request.user
-    posts = user.post_set.all()
-    return render(request, 'logged/dashboard.html', {'posts': posts})
+    softs = user.soft_set.all()
+    return render(request, 'logged/dashboard.html', {'softs': softs})
 
 @login_required
-def createPost(request):
-    form = PostForm(request.POST or None)
+def createSoft(request):
+    form = SoftForm(request.POST or None)
     user = request.user
-    posts = user.post_set.all()
+    softs = user.soft_set.all()
 
     context = {}
     if request.method == 'POST':
@@ -58,7 +58,7 @@ def createPost(request):
             form.instance.viwes = 0
             form.save()
 
-            return render(request, 'logged/dashboard.html', {'posts': posts})
+            return render(request, 'logged/dashboard.html', {'softs': softs})
     '''
     if request.method == 'POST':
         if form.is_valid():
@@ -67,4 +67,4 @@ def createPost(request):
             form.save()
             return render(request, 'logged/dashboard.html', {'posts': posts})
     '''
-    return render(request, 'logged/post-edit.html', {'posts': posts, 'form':form})
+    return render(request, 'logged/soft-edit.html', {'softs': softs, 'form':form})
