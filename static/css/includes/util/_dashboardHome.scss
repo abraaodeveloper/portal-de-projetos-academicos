@@ -9,26 +9,28 @@
     font-size: 40px;
 }
 
-.squad{
-    width: 300px;
-    height: 300px;
+.squad-container{
+    width: 320px;
+    height: 400px;
     text-align: center;
 
     padding-top: 15px;
+    border-radius: 20px;
 }
 
-.squad:hover{
+/*.squad:hover{
     cursor: pointer;
     color:  var(--cinza-escuro);
 
     transition: .3s ease all;
-}
+}*/
 
 .img-project img{
     width: 200px;
     height: 200px;
     border-radius: 100%;
     object-fit: cover;
+
 }
 
 .projects{
@@ -56,6 +58,8 @@
 .views{
     display: flex;
     justify-content: center;
+
+    /*padding-top: 5px;*/
 }
 
 .views p{
@@ -95,31 +99,13 @@
     margin-top: 15px;
 }
 
-.text-container-projects:hover{
-    margin-top: 10px;
-    cursor: pointer;
-    border: 1px solid var(--azul-claro);
-    border-radius: 20px;
+.text-container-projects{
+    margin-top: 30px;
+    padding-top: 20px;
 
-    transition: .2s ease all;
-}
+    &:hover{
+        cursor: pointer;
 
-.img-medal{
-    width: 300px;
-    height: 40px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    transform: rotate(10deg);
-    transform-origin: right top 0;
-
-    img{
-        width: 40px;
-        height: 40px;
-
-        border-radius: 100%;
-        object-fit: cover;
+        transition: .2s ease all;
     }
 }

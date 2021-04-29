@@ -521,20 +521,20 @@ hr {
   font-size: 40px;
 }
 
-.squad {
-  width: 300px;
-  height: 300px;
+.squad-container {
+  width: 320px;
+  height: 400px;
   text-align: center;
   padding-top: 15px;
+  border-radius: 20px;
 }
 
-.squad:hover {
-  cursor: pointer;
-  color: var(--cinza-escuro);
-  -webkit-transition: .3s ease all;
-  transition: .3s ease all;
-}
+/*.squad:hover{
+    cursor: pointer;
+    color:  var(--cinza-escuro);
 
+    transition: .3s ease all;
+}*/
 .img-project img {
   width: 200px;
   height: 200px;
@@ -584,6 +584,7 @@ hr {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  /*padding-top: 5px;*/
 }
 
 .views p {
@@ -636,39 +637,14 @@ hr {
   margin-top: 15px;
 }
 
+.text-container-projects {
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
 .text-container-projects:hover {
-  margin-top: 10px;
   cursor: pointer;
-  border: 1px solid var(--azul-claro);
-  border-radius: 20px;
   -webkit-transition: .2s ease all;
   transition: .2s ease all;
-}
-
-.img-medal {
-  width: 300px;
-  height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-transform: rotate(10deg);
-          transform: rotate(10deg);
-  -webkit-transform-origin: right top 0;
-          transform-origin: right top 0;
-}
-
-.img-medal img {
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 /*# sourceMappingURL=styles.css.map */
