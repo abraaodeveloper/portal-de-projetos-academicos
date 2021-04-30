@@ -28,43 +28,41 @@
     <div class="bar-container">
         <div class="dashboard-bar">
             <div class="bar">
-                <div class="text-bar">
+                <div class="text-bar shadow p-3 mb-5 bg-body rounded">
                     <input type="hidden" id="qtdAcess" value="{{qtdAcess}}">
-                    <p>Total de Acessos</p>
-                    <!--{{qtdAcess}}-->
-                </div>
-                <div id="bar-one">
-                    0 Acessos
+                    <p class="txt-dash-one">Total de Acessos</p>
+                    <div id="bar-one">
+                        <p class="txt-dash-two">{{qtdAcess}} Acessos</p>
+                    </div>
                 </div>
             </div>
             <div class="bar">
-                <div class="text-bar">
+                <div class="text-bar shadow p-3 mb-5 bg-body rounded">
                     <input type="hidden" id="qtdAccounts" value="{{users}}">
-                    <p>Total de Contas</p>
-                    <!--{{users}}-->
-            </div>
-            <div id="bar-two">
-                0 Contas
-            </div>
+                    <p class="txt-dash-one">Total de Contas</p>
+                    <div id="bar-two">
+                        <p class="txt-dash-two">{{users}} Contas</p>
+                    </div>
+                </div>
             </div>
             <div class="bar">
-                <div class="text-bar">
+                <div class="text-bar shadow p-3 mb-5 bg-body rounded">
                     <input type="hidden" id="qtdProjetcSoft" value="{{qtdProjetcSoft}}">
-                    <p>Total de Projetos de Software</p>
+                    <p class="txt-dash-one">Total de Projetos de Software</p>
                     <!--{{qtdProjetcSoft}}-->
-            </div>
-            <div id="bar-three">
-                0 Projetos
-            </div>
+                    <div id="bar-three">
+                        <p class="txt-dash-two">{{qtdProjetcSoft}} Projetos</p>
+                    </div>
+                </div>
             </div>
             <div class="bar">
-                <div class="text-bar">
+                <div class="text-bar shadow p-3 mb-5 bg-body rounded">
                     <input type="hidden" id="qtdProjetcEbook" value="{{qtdProjetcEbook}}">
-                    <p>Total de Livros</p>
+                    <p class="txt-dash-one">Total de Livros</p>
                     <!--{{qtdProjetcEbook}}-->
-            </div>
-                <div id="bar-four">
-                    0 Livros
+                    <div id="bar-four">
+                        <p class="txt-dash-two">{{qtdProjetcEbook}} Livros</p>
+                    </div>
                 </div>
             </div>
         </div>
