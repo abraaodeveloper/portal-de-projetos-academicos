@@ -613,7 +613,7 @@ hr {
 .text-project a {
   /*font-family: 'Roboto';*/
   font-size: 25px;
-  color: var(--cinza-escuro);
+  color: var(--azul-escuro);
   width: 250px;
 }
 
@@ -661,20 +661,31 @@ hr {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid var(--azul-claro);
-  border-radius: 10px;
   width: 1125px;
   margin-top: 80px;
-}
-
-.dashboard-bar p {
   text-align: center;
-  font-size: 18px;
   color: var(--cinza-escuro);
 }
 
-.text-bar {
+.dashboard-bar .bar .text-bar {
   margin-top: 15px;
+  width: 230px;
+  height: 150px;
+}
+
+.dashboard-bar .bar .text-bar .txt-dash-one {
+  font-size: 22px;
+  color: var(--azul-escuro);
+}
+
+.dashboard-bar .bar .text-bar .txt-dash-two {
+  color: #49ff49;
+  font-size: 20px;
+}
+
+#bar-two {
+  color: #49ff49;
+  font-size: 20px;
 }
 
 .text-container-projects {
