@@ -158,7 +158,6 @@ Thumbs.db #thumbnail cache on Windows
 .idea
 
 __pycache__
-migrations
 
 media
 
