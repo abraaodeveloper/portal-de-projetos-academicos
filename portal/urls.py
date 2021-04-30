@@ -1,23 +1,26 @@
 from django.urls import path
 
-from . import views
+from .views.dashboard_views import *
+from .views.ebook_views import *
+from .views.guest_views import *
+from .views.soft_views import *
 
 urlpatterns = [
     # guest
-    path('', views.home, name='home'),
-    path('project/<project_slug>', views.project, name="project"),
-    path('projects/<type_content>', views.projects, name="projects"),
+    path('', home, name='home'),
+    path('project/<project_slug>', project, name="project"),
+    path('projects/<type_content>', projects, name="projects"),
 
     # user logged
-    path('dashboard/', views.dashboard, name="dashboard"),
+    path('dashboard/', dashboard, name="dashboard"),
 
     # ebook
-    path('createebook/', views.createEbook, name="createebook"),
-    path('editebook/<int:ebook_id>', views.updateEbook, name="editebook"),
-    path('deletebook/<int:ebook_id>', views.deleteEbook, name="deleteebook"),
+    path('createebook/', createEbook, name="createebook"),
+    path('editebook/<int:ebook_id>', updateEbook, name="editebook"),
+    path('deletebook/<int:ebook_id>', deleteEbook, name="deleteebook"),
 
     # software
-    path('createsoft/', views.createSoft, name="createsoft"),
-    path('editesoft/<int:soft_id>', views.updateSoft, name="editesoft"),
-    path('deletesoft/<int:soft_id>', views.deleteSoft, name="deletesoft"),
+    path('createsoft/', createSoft, name="createsoft"),
+    path('editesoft/<int:soft_id>', updateSoft, name="editesoft"),
+    path('deletesoft/<int:soft_id>', deleteSoft, name="deletesoft"),
 ]

@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container" >
-    <h1>{{post.title}}</h1>
-    <h3>{{post.resume}}</h3>
-    <p>{{post.content | safe}}</p>
-    <a href="{{post.file_name.url}}">Download</a>
+<div class="container">
+    <div class="m-post" >
+        <header>
+            <div><h1>{{post.title}}</h1></div>
+            <div>
+                <div>{{post.author.username}}</div>
+                <div>{{post.author.created_at}}</div>
+            </div>
+        </header>
+        
+        <h3>{{post.resume}}</h3>
+        <p>{{post.content | safe}}</p>
+        <a href="{{post.file_name.url}}" download="file.txt">Download</a> 
+    </div>
 </div>
-
 {% endblock content %}
