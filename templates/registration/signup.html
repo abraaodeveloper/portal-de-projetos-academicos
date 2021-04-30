@@ -2,15 +2,26 @@
 {% block title %}Entrar{% endblock %}
 
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
-<div class="m-container-login">
+<div class="m-container-login mt-5 d-flex flex-column">
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="alert alert-warning alert-dismissible fade show" {% endif %}>
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
   <div class="m-card-login">
     <h2>Registro</h2>
     <form method="post">
       {% csrf_token %}
-      {{ form.as_p }}
+      {{ form|crispy }}
       <button type="submit" class="btn btn-primary">Registrar-se</button>
     </form>
   </div>

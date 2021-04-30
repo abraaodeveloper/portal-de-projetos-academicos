@@ -287,6 +287,10 @@ body {
           align-items: center;
 }
 
+.m-container-login li {
+  color: whitesmoke;
+}
+
 .m-container-login .m-card-login {
   background-color: #395D73;
   padding: 3em;
@@ -332,6 +336,14 @@ body {
   border: 1px solid #F5F5F5;
   border-radius: .3em;
   background-color: #395D73;
+}
+
+.django-ckeditor-widget {
+  width: 100%;
+}
+
+.django-ckeditor-widget #id_content {
+  width: 100%;
 }
 
 .card-post {

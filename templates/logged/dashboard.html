@@ -4,5 +4,61 @@
 {% load static %}
 
 {% block content %}
+<div class="container">
+  <div class="m-5 d-flex justify-content-between">
+    <h1>Olá, {{ user.username }}!</h1>
+    <div class="d-flex flex-column">
+      <a class="btn btn-outline-success" href="/createsoft/">Novo projeto de Software</a>
+      <a class="btn btn-outline-success mt-2" href="/createebook/">Novo projeto com E-book</a>
+    </div>
+  </div>
+  <hr class="dropdown-divider">
+  <div class="d-flex flex-column mt-5">
+    {% for post in posts %}
+    <div class="card mt-2">
+      <div class="card-header d-flex justify-content-between" style="height: 2.4em;">
+        {% if post.keyword %}
+        <h5>E-book</h5>
+        {% else %}
+        <h5>Software</h5>
+        {% endif %}
+        <div class="dropdown">
+          <a class="btn" style="padding: 0;" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="bi bi-three-dots-vertical"></i>
+          </a>
 
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li>
+              {% if post.keyword %}
+              <a class="dropdown-item" href="/editebook/{{post.id}}">Editar</a>
+              {% else %}
+            <li><a class="dropdown-item" href="/editesoft/{{post.id}}">Editar</a></li>
+            {% endif %}
+
+            </li>
+            <li>
+              {% if post.keyword %}
+              <a class="dropdown-item" href="/deletebook/{{post.id}}">Excluir</a>
+              {% else %}
+            <li><a class="dropdown-item" href="/deletesoft/{{post.id}}">Excluir</a></li>
+            {% endif %}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.resume}}</p>
+        <div class="d-flex flex-row justify-content-between align-items-center">
+          <a href="/project/{{post.slug}}" class="btn btn-primary">Ver Post</a>
+          <div class="views">
+            <p>{{post.views}} visualizações</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}
