@@ -19,16 +19,19 @@ def home(request):
 
     if(not(len(result) < 3)):
         cont = 0
-        while(cont < len(result)-1):
+        ordenado = False
+        while(cont < len(result)-1 and not(ordenado)):
+            ordenado = True
             if(result[cont].views < result[cont+1].views):
+                ordenado = False
                 key = result[cont]
                 result[cont] = result[cont+1]
                 result[cont+1] = key
             cont +=1
 
-    print(result[:3:1])
     users = User.objects.all()
-    return render(request, 'guest/index.html', {'posts': result, 'users': users.count()})
+
+    return render(request, 'guest/index.html', {'posts': result[:3:1], 'users': users.count()})
 
 def projects(request, type_content):
     softs = Soft.objects.filter(type_content=type_content)
@@ -71,4 +74,4 @@ def createSoft(request):
 
             return render(request, 'logged/dashboard.html', {'softs': softs})
 
-    return render(request, 'logged/soft-edit.html', {'softs': softs, 'form':form})
+    return render(request, 'logged/post-edit.html', {'softs': softs, 'form':form})

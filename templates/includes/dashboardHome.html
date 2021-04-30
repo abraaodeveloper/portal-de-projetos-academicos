@@ -3,7 +3,7 @@
         <p>Projetos mais vistos</p>
     </div>
     <div class="d-flex justify-content-between">
-        {% for soft in result %}
+        {% for post in posts %}
         <div class="projects">
             <div class="">
                 <div class="squad">
@@ -11,13 +11,12 @@
                         <img src="/static/img/imgHome/img-test.jpg" alt="">
                     </div>
                     <div class="text-project">
-                        <a href="/project/{{soft.slug}}">{{soft.title}}</a>                        
-                        <p>{{soft.description}}</p>
+                        <a href="/project/{{post.slug}}">{{post.title}}</a>                        
+                        <p>{{post.description}}</p>
                     </div>
                     <a href="{{post.file_name.url}}">Download</a>
                     <div class="views">
-                        <p>{{soft.views}} visualizações</p>
-
+                        <p>{{post.views}} visualizações</p>
                     </div>
                 </div>
             </div>
