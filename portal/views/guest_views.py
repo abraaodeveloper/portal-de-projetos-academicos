@@ -12,28 +12,25 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 def home(request):
 
-    try: 
-        softs = Soft.objects.all().order_by('-views')[:3:1]
-        ebooks = Ebook.objects.all().order_by('-views')[:3:1]
-        result = softs + ebooks
+    softs = Soft.objects.all().order_by('-views')[:3:1]
+    ebooks = Ebook.objects.all().order_by('-views')[:3:1]
+    result = softs + ebooks
 
-        if(not(len(result) < 3)):
-            cont = 0
-            ordenado = False
-            while(cont < len(result)-1 and not(ordenado)):
-                ordenado = True
-                if(result[cont].views < result[cont+1].views):
-                    ordenado = False
-                    key = result[cont]
-                    result[cont] = result[cont+1]
-                    result[cont+1] = key
-                cont +=1
+    if(not(len(result) < 3)):
+        cont = 0
+        ordenado = False
+        while(cont < len(result)-1 and not(ordenado)):
+            ordenado = True
+            if(result[cont].views < result[cont+1].views):
+                ordenado = False
+                key = result[cont]
+                result[cont] = result[cont+1]
+                result[cont+1] = key
+            cont +=1
 
-        users = User.objects.all()
+    users = User.objects.all()
 
-        return render(request, 'guest/index.html', {'posts': result[:3:1], 'users': users.count(), 'qtdAcess': 3})
-    except:
-        return redirect('home')
+    return render(request, 'guest/index.html', {'posts': result[:3:1], 'users': users.count(), 'qtdAcess': 3})
 
 def projects(request, type_content):
     if (type_content == "software"):
