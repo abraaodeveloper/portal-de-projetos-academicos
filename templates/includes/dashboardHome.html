@@ -7,11 +7,12 @@
         <div class="projects">
             <div class="">
                 <div class="squad-container">
-                    <div class="img-project">
-                        <img class="shadow" src="/static/img/imgHome/img-test.jpg" alt="">
-                    </div>
+
 
                     <div class="text-container-projects shadow-lg p-3 mb-5 bg-body rounded">
+                        <div class="img-project">
+                            <img class="shadow" src="/static/img/imgHome/img-test.jpg" alt="">
+                        </div>
                         <div class="text-project">
                             <a href="/project/{{post.slug}}">{{post.title}}</a>
                             
@@ -26,14 +27,12 @@
         </div>
         {% endfor %}
     </div>
-    <div class="bar-container">
-        <div>
-            <canvas id="myChart"></canvas>
-        </div>
+    <hr>
+    <div class="bar-container" id="m-cardds">
         
         <div class="dashboard-bar">
             <div class="bar">
-                <div class="text-bar shadow p-3 mb-5 bg-body rounded">
+                <div class="text-bar shadow p-3 mb-5 bg-body rounded flex-column align-items-center">
                     <input type="hidden" id="qtdAcess" value="{{qtdAcess}}">
                     <p class="txt-dash-one">Total de Acessos</p>
                     <div id="bar-one">
@@ -42,7 +41,7 @@
                 </div>
             </div>
             <div class="bar">
-                <div class="text-bar shadow p-3 mb-5 bg-body rounded">
+                <div class="text-bar shadow p-3 mb-5 bg-body rounded flex-column align-items-center">
 
                     <input type="hidden" id="qtdAccounts" value="{{users}}">
                     <p class="txt-dash-one">Total de Contas</p>
@@ -52,7 +51,7 @@
                 </div>
             </div>
             <div class="bar">
-                <div class="text-bar shadow p-3 mb-5 bg-body rounded">
+                <div class="text-bar shadow p-3 mb-5 bg-body rounded flex-column align-items-center" >
                     <input type="hidden" id="qtdProjetcSoft" value="{{qtdProjetcSoft}}">
                     <p class="txt-dash-one">Total de Projetos de Software</p>
                     <!--{{qtdProjetcSoft}}-->
@@ -62,7 +61,7 @@
                 </div>
             </div>
             <div class="bar">
-                <div class="text-bar shadow p-3 mb-5 bg-body rounded">
+                <div class="text-bar shadow p-3 mb-5 bg-body rounded flex-column align-items-center">
                     <input type="hidden" id="qtdProjetcEbook" value="{{qtdProjetcEbook}}">
                     <p class="txt-dash-one">Total de Livros</p>
                     <!--{{qtdProjetcEbook}}-->
@@ -71,6 +70,18 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="content-chart d-flex justify-content-evenly align-items-center d-flex align-items-center">
+        <div class="m-t-chart">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Blanditiis ipsum doloremque unde nesciunt enim cupiditate voluptates.
+                Blanditiis ipsum doloremque unde nesciunt enim cupiditate voluptates.
+            </p>
+        </div>
+        <div class="m-chart">
+            <canvas id="myChart"></canvas>
         </div>
     </div>
 </div>

@@ -30,6 +30,7 @@ def home(request):
             cont +=1
 
     users = User.objects.all()
+    #print(users[0].created_at)
 
     return render(request, 'guest/index.html', {'posts': result[:3:1], 'users': users.count()})
 
@@ -38,13 +39,21 @@ def projects(request, type_content):
     return render(request, 'guest/projects-list.html', {'softs': softs})
 
 def project(request, project_slug):
-    soft = Soft.objects.get(slug=soft_slug)
-    ebook = Ebook.objects.get(slug=soft_slug)
-    print(soft)
-    print(ebook)
-    soft.views = soft.views + 1
-    soft.save()
-    return render(request, 'guest/project.html', {'soft': soft})
+    try: 
+        soft = Soft.objects.get(slug=project_slug)
+        soft.views = soft.views + 1
+        soft.save()
+        return render(request, 'guest/project.html', {'post': soft})
+    except:
+        print()
+
+    try: 
+        ebook = Ebook.objects.get(slug=project_slug)
+        ebook.views = ebook.views + 1
+        ebook.save()
+        return render(request, 'guest/project.html', {'post': ebook})
+    except:
+        print()
 
 # crud post
 @login_required

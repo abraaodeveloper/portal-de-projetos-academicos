@@ -63,16 +63,16 @@
 }
 
 .views p{
-    font-family: 'Roboto';
-    color: rgb(73, 255, 73);
-    font-weight: bold;
+    color: $highlight-color;
     font-size: 16px;
 }
 
-.bar-container{
+#m-cardds{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding-top: 15vh;
 }
 
 .dashboard-bar{
@@ -81,7 +81,6 @@
     justify-content: space-evenly;
     align-items: center;
 
-    width: 1125px;
     margin-top: 80px;
 
     text-align: center;
@@ -93,6 +92,7 @@
             margin-top: 15px;
             width: 230px;
             height: 150px;
+            text-align: center;
             
             .txt-dash-one{
                 font-size: 22px;
@@ -100,18 +100,17 @@
             }
                 
             .txt-dash-two{
-                    color: rgb(73, 255, 73);
-                    font-size: 20px;
+                color: $highlight-color;
+                font-size: 20px;
             }
         }
     }
 }
 
 #bar-two{
-    color: rgb(73, 255, 73);
+    color: $highlight-color;
     font-size: 20px;
 }
-
 
 .text-container-projects{
     margin-top: 30px;
@@ -119,7 +118,24 @@
 
     &:hover{
         cursor: pointer;
-
         transition: .2s ease all;
+    }
+}
+
+.content-chart{
+
+    margin: 20vh 1vw;
+
+    .m-t-chart{
+        width: 20%;
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    .m-chart{
+
+        #myChart{
+            width: 30vw;
+        }
     }
 }

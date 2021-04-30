@@ -628,13 +628,11 @@ hr {
 }
 
 .views p {
-  font-family: 'Roboto';
-  color: #49ff49;
-  font-weight: bold;
+  color: #ff6384;
   font-size: 16px;
 }
 
-.bar-container {
+#m-cardds {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -645,6 +643,10 @@ hr {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 15vh;
 }
 
 .dashboard-bar {
@@ -661,7 +663,6 @@ hr {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 1125px;
   margin-top: 80px;
   text-align: center;
   color: var(--cinza-escuro);
@@ -671,6 +672,7 @@ hr {
   margin-top: 15px;
   width: 230px;
   height: 150px;
+  text-align: center;
 }
 
 .dashboard-bar .bar .text-bar .txt-dash-one {
@@ -679,12 +681,12 @@ hr {
 }
 
 .dashboard-bar .bar .text-bar .txt-dash-two {
-  color: #49ff49;
+  color: #ff6384;
   font-size: 20px;
 }
 
 #bar-two {
-  color: #49ff49;
+  color: #ff6384;
   font-size: 20px;
 }
 
@@ -697,5 +699,19 @@ hr {
   cursor: pointer;
   -webkit-transition: .2s ease all;
   transition: .2s ease all;
+}
+
+.content-chart {
+  margin: 20vh 1vw;
+}
+
+.content-chart .m-t-chart {
+  width: 20%;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.content-chart .m-chart #myChart {
+  width: 30vw;
 }
 /*# sourceMappingURL=styles.css.map */
