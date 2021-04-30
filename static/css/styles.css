@@ -552,35 +552,33 @@ hr {
 
 .text-projects {
   color: var(--cinza-escuro);
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin-top: 60px;
+  margin-bottom: 40px;
 }
 
 .text-projects p {
   text-align: center;
-  font-size: 20px;
+  font-size: 40px;
 }
 
-.squad {
-  width: 300px;
-  height: 260px;
+.squad-container {
+  width: 320px;
+  height: 400px;
   text-align: center;
   padding-top: 15px;
-  border: 1px solid var(--azul-claro);
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
-.squad:hover {
-  cursor: pointer;
-  color: var(--cinza-escuro);
-  -webkit-transition: .3s ease all;
-  transition: .3s ease all;
-}
+/*.squad:hover{
+    cursor: pointer;
+    color:  var(--cinza-escuro);
 
+    transition: .3s ease all;
+}*/
 .img-project img {
-  width: 250px;
-  height: 100px;
-  border-radius: 5px;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -605,38 +603,35 @@ hr {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 300px;
   margin-top: 10px;
 }
 
-.text-project p {
-  font-family: 'Roboto';
-  font-size: 15px;
+.text-project a {
+  /*font-family: 'Roboto';*/
+  font-size: 25px;
+  color: var(--cinza-escuro);
   width: 250px;
-  max-height: 200px;
 }
 
 .views {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  margin-right: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /*padding-top: 5px;*/
 }
 
 .views p {
   font-family: 'Roboto';
+  color: #49ff49;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .bar-container {
@@ -669,7 +664,7 @@ hr {
   border: 1px solid var(--azul-claro);
   border-radius: 10px;
   width: 1125px;
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
 .dashboard-bar p {
@@ -679,6 +674,17 @@ hr {
 }
 
 .text-bar {
-  margin-top: 20px;
+  margin-top: 15px;
+}
+
+.text-container-projects {
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+.text-container-projects:hover {
+  cursor: pointer;
+  -webkit-transition: .2s ease all;
+  transition: .2s ease all;
 }
 /*# sourceMappingURL=styles.css.map */
