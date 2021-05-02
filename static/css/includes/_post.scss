@@ -13,4 +13,47 @@
 // post full page
 .m-post{
     padding: 3em;
+    margin: 3em;
+    min-height: 85vh;
+
+    header{
+        display: flex;
+
+        h1{
+            flex-grow: 1;
+            text-align: center;
+        }
+    }
+
+    h4{
+        font-size: medium;
+    }
+
+    .info-post{
+        text-align: end;
+    }
+
+    .post-content{
+        flex-grow: 1;
+    }
+
+    .footer-post{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .comments{
+        margin-top: 2em;
+
+        span{
+            font-weight: 520;
+        }
+        p{
+            margin-left: 1em;
+        }
+
+        button{
+            margin: 1em;
+        }
+    }
 }

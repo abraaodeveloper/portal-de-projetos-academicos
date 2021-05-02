@@ -11,6 +11,8 @@ urlpatterns = [
     path('project/<project_slug>', project, name="project"),
     path('projects/<type_content>', projects, name="projects"),
 
+    path('sendcomment/<project_slug>', sendComment, name="sendcomment"),
+
     # user logged
     path('dashboard/', dashboard, name="dashboard"),
 

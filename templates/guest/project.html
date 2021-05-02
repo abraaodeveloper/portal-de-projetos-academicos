@@ -1,19 +1,53 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
 <div class="container">
-    <div class="m-post" >
+    <div class="m-post card">
         <header>
-            <div><h1>{{post.title}}</h1></div>
-            <div>
-                <div>{{post.author.username}}</div>
-                <div>{{post.author.created_at}}</div>
+            <h1>{{post.title}}</h1>
+            <div class="info-post">
+                <div>Criado em: {{post.created_at}}</div>
+                <div>Autor: {{post.author.username}}</div>
             </div>
         </header>
-        
-        <h3>{{post.resume}}</h3>
-        <p>{{post.content | safe}}</p>
-        <a href="{{post.file_name.url}}" download="file.txt">Download</a> 
+
+        <h4>Resumo: {{post.resume}}</h4>
+        <p class="post-content">{{post.content | safe}}</p>
+
+        <div class="footer-post">
+            <p>Visualizações:{{post.views}}</p>
+            <a class="btn btn-outline-success" href="{{post.file_name.url}}" download="file.txt">Download</a>
+        </div>
+        <div class="comments card">
+            <div class="card-header">
+                Comentários
+            </div>
+            <div class="card-body">
+                <ul>
+                    {% for comment in comments %}
+                    <li>
+                        <span>Autor: {{comment.author.username}}</span>
+                        <p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z" />
+                            </svg>
+                            Comentário: {{comment.comment}}
+                        </p>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                <form action="/sendcomment/{{post.slug}}" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-primary">Comentar</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock content %}

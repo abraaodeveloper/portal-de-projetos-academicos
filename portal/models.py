@@ -48,3 +48,15 @@ class Ebook(models.Model):
 
     def __str__(self):
         return self.title        
+
+
+class Comment(models.Model):
+
+    comment = models.CharField(max_length=255)
+    author = models.ForeignKey(User, on_delete=models.PROTECT)
+    created_at = models.DateField(auto_now_add=True)
+    soft = models.ForeignKey(Soft, on_delete=models.CASCADE, null=True)
+    ebook = models.ForeignKey(Ebook(), on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.comment 

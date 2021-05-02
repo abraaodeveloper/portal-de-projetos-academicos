@@ -42,11 +42,13 @@ def projects(request, type_content):
     return redirect('home')
 
 def project(request, project_slug):
+    form = CommentForm()
     try: 
         soft = Soft.objects.get(slug=project_slug)
         soft.views = soft.views + 1
         soft.save()
-        return render(request, 'guest/project.html', {'post': soft})
+        comments = soft.comment_set.all()
+        return render(request, 'guest/project.html', {'post': soft, 'form': form, 'comments': comments})
     except:
         print()
 
@@ -54,7 +56,40 @@ def project(request, project_slug):
         ebook = Ebook.objects.get(slug=project_slug)
         ebook.views = ebook.views + 1
         ebook.save()
-        return render(request, 'guest/project.html', {'post': ebook})
+        comments = ebook.comment_set.all()
+        return render(request, 'guest/project.html', {'post': ebook, 'form': form, 'comments': comments})
+    except:
+        print()
+
+    return redirect('home')
+
+@login_required
+def sendComment(request, project_slug):
+    form = CommentForm(request.POST or None)
+
+    try: 
+        soft = Soft.objects.get(slug=project_slug)
+        if request.method == 'POST':
+            if form.is_valid():
+                form.instance.author = request.user
+                form.instance.soft = soft
+                form.save()
+
+        comments = soft.comment_set.all()
+        return redirect('/project/'+project_slug)
+    except:
+        print()
+
+    try: 
+        ebook = Ebook.objects.get(slug=project_slug)
+        if request.method == 'POST':
+            if form.is_valid():
+                form.instance.author = request.user
+                form.instance.ebook = ebook
+                form.save()
+
+        comments = ebook.comment_set.all()
+        return redirect('/project/'+project_slug)
     except:
         print()
 

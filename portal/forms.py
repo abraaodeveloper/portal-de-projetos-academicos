@@ -36,7 +36,7 @@ class EbookForm(forms.ModelForm):
             "content": "Conteúdo principal", 
             "edition": "Edição",
         }
-        prepopulated_fields = {"slug": ("title",)}
+
         widgets = {
  
         }
@@ -46,4 +46,17 @@ class EbookForm(forms.ModelForm):
             "language", "keyword", 
             "qtd_pages", "content", 
             "edition"
+        ]
+
+class CommentForm(forms.ModelForm):
+    
+    class Meta:
+        model = Comment
+        labels  = {
+            "id": "",
+            "comment": "Faça um comentário",
+        }
+
+        fields = [
+            "id", "comment"
         ]
