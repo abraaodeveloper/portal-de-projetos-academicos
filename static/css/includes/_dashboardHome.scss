@@ -1,15 +1,15 @@
-.text-projects{
+.text-projects {
     color: var(--cinza-escuro);
 
     margin-top: 60px;
     margin-bottom: 40px;
 }
-.text-projects p{
+.text-projects p {
     text-align: center;
     font-size: 40px;
 }
 
-.squad-container{
+.squad-container {
     width: 320px;
     height: 400px;
     text-align: center;
@@ -25,29 +25,28 @@
     transition: .3s ease all;
 }*/
 
-.img-project img{
+.img-project img {
     width: 200px;
     height: 200px;
     border-radius: 100%;
     object-fit: cover;
-
 }
 
-.projects{
+.projects {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.text-project{
+.text-project {
     display: flex;
     justify-content: center;
 
     width: 300px;
     margin-top: 10px;
 }
-.text-project a{
+.text-project a {
     /*font-family: 'Roboto';*/
     font-size: 25px;
     color: var(--azul-escuro);
@@ -55,19 +54,19 @@
     width: 250px;
 }
 
-.views{
+.views {
     display: flex;
     justify-content: center;
 
     /*padding-top: 5px;*/
 }
 
-.views p{
+.views p {
     color: $highlight-color;
     font-size: 16px;
 }
 
-#m-cardds{
+#m-cardds {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,7 +74,7 @@
     padding-top: 15vh;
 }
 
-.dashboard-bar{
+.dashboard-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -86,20 +85,19 @@
     text-align: center;
     color: var(--cinza-escuro);
 
-    .bar{
-        
-        .text-bar{
+    .bar {
+        .text-bar {
             margin-top: 15px;
             width: 230px;
             height: 150px;
             text-align: center;
-            
-            .txt-dash-one{
+
+            .txt-dash-one {
                 font-size: 22px;
                 color: var(--azul-escuro);
             }
-                
-            .txt-dash-two{
+
+            .txt-dash-two {
                 color: $highlight-color;
                 font-size: 20px;
             }
@@ -107,35 +105,153 @@
     }
 }
 
-#bar-two{
+#bar-two {
     color: $highlight-color;
     font-size: 20px;
 }
 
-.text-container-projects{
+.text-container-projects {
     margin-top: 30px;
     padding-top: 20px;
 
-    &:hover{
+    &:hover {
         cursor: pointer;
-        transition: .2s ease all;
+        transition: 0.2s ease all;
     }
 }
 
-.content-chart{
-
+.content-chart {
     margin: 20vh 1vw;
 
-    .m-t-chart{
+    .m-t-chart {
         width: 20%;
         font-size: 1.3em;
         text-align: center;
     }
 
-    .m-chart{
-
-        #myChart{
+    .m-chart {
+        #myChart {
             width: 30vw;
+        }
+    }
+}
+
+.container-card {
+    display: flex;
+    flex-direction: row;
+}
+
+.cards-home-softs-and-ebooks {
+    border-radius: 50px;
+    margin-left: 3vw;
+    height: 40vh;
+    width: 40vw;
+    background: linear-gradient(#370c2d, #9b9fb9);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+
+}
+
+#sobre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+
+    .initial-text-container{
+        width: 20%;
+        background-color: #fff;
+        color: $azul-escuro;
+
+        margin: auto;
+    }
+
+    .container-card{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 5em;
+
+        .card{
+            display: flex;
+            flex-direction: row;
+            width: 30vw;
+            padding: 2em;
+            background: linear-gradient($azul-claro, #54565b69);
+            border: none;
+            
+            img {
+                border-radius: 100%;
+                width: 26vh;
+                height: 26vh;
+                object-fit: cover;
+            }
+
+            .card-content{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 1em;
+                text-align: center;
+
+                h3{
+                    margin-bottom: 1.5em;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .posts-home,
+    .dashboard-bar,
+    .content-chart,
+    .footer-container,
+    .container-card {
+        flex-direction: column;
+    }
+
+    .content-chart {
+        margin: 1em;
+        width: 100%;
+
+        .m-t-chart {
+            width: 90%;
+            font-size: 1.3em;
+            text-align: center;
+        }
+
+        .m-chart {
+            #myChart {
+                width: 90%;
+            }
+        }
+    }
+
+    #sobre {
+        width: 100%;
+    
+        .container-card{
+            flex-direction: column;
+            justify-content: center;
+    
+            .card{
+                flex-direction: column;
+                width: 90%;
+                padding: .5em;
+                margin: auto;
+                margin-top: 2em;
+                
+                img {
+                    width: 50vw;
+                    height: 50vw;
+                    margin: auto;
+                }
+            }
         }
     }
 }
