@@ -162,7 +162,7 @@ body {
   position: fixed;
   top: 70px;
   z-index: 2;
-  background-color: #A7CBD9;
+  background-color: #a7cbd9;
 }
 
 .navbar .nav-logo #m-card-user ul {
@@ -176,8 +176,8 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  margin: .1em;
-  padding: .5em;
+  margin: 0.1em;
+  padding: 0.5em;
 }
 
 .navbar .nav-logo #m-card-user ul li {
@@ -197,13 +197,13 @@ body {
 
 .navbar .nav-logo #m-card-user ul li p {
   color: #fff;
-  margin: 0 auto .6em auto;
+  margin: 0 auto 0.6em auto;
 }
 
 .navbar .nav-logo #m-card-user ul .btn-card-user {
   border: 2px solid #fff;
   border-radius: 0.3em;
-  margin: .3em;
+  margin: 0.3em;
 }
 
 .navbar .nav-logo #m-card-user ul .btn-card-user a {
@@ -226,7 +226,8 @@ body {
           flex-direction: row;
 }
 
-.navbar .list ul a, .navbar .list ul button {
+.navbar .list ul a,
+.navbar .list ul .dropbtn {
   text-decoration: none;
   color: var(--cinza-claro);
   font-size: 20px;
@@ -235,7 +236,8 @@ body {
   transition: 0.3s ease all;
 }
 
-.navbar .list ul a:hover, .navbar .list ul button:hover {
+.navbar .list ul a:hover,
+.navbar .list ul .dropbtn:hover {
   border: 1px solid var(--cinza-claro);
   border-top: none;
   border-left: none;
@@ -245,6 +247,16 @@ body {
 
 .navbar .list ul .m-item-menu:hover {
   color: #A7CBD9;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar .list ul {
+    margin: 0;
+    padding: 0;
+  }
+  .navbar .list ul a, .navbar .list ul button {
+    margin: .5em;
+  }
 }
 
 .carousel-container img {
@@ -486,6 +498,15 @@ footer .local-logo:hover {
   padding: 3px;
   -webkit-transition: 0.5s ease all;
   transition: 0.5s ease all;
+}
+
+@media screen and (max-width: 900px) {
+  .footer-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .m-container-login {
