@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from django.core.files.storage import FileSystemStorage
 
+from django.http import JsonResponse
+
 from ..forms import *
 from ..models import Soft, Ebook
 
@@ -11,9 +13,19 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
+    qtdProjetcSoft = Soft.objects.all()
+    qtdProjetcEbook = Ebook.objects.all()
+    qtdAcess = 0
+
+    for s in qtdProjetcSoft:
+        qtdAcess += s.views
+
+    for e in qtdProjetcEbook:
+        qtdAcess += e.views
 
     softs = Soft.objects.all().order_by('-views')[:3:1]
     ebooks = Ebook.objects.all().order_by('-views')[:3:1]
+
     result = softs + ebooks
 
     if(not(len(result) < 3)):
@@ -30,7 +42,35 @@ def home(request):
 
     users = User.objects.all()
 
-    return render(request, 'guest/index.html', {'posts': result[:3:1], 'users': users.count(), 'qtdAcess': 3})
+    return render(request, 'guest/index.html', {
+        'posts': result[:3:1],
+        'users': users.count(), 
+        'qtdacess': qtdAcess,
+        'qtdProjetcSoft': qtdProjetcSoft.count(),
+        'qtdProjetcEbook': qtdProjetcEbook.count()
+    })
+
+def getStatiscs(request):
+    qtdProjetcSoft = Soft.objects.all()
+    qtdProjetcEbook = Ebook.objects.all()
+
+    datesForCreatedContent = []
+
+    labels = []
+    values = []
+
+    for s in qtdProjetcSoft:
+        datesForCreatedContent.append([str(s.created_at), 1])
+    
+    for s in qtdProjetcEbook:
+        datesForCreatedContent.append([str(s.created_at), 1])
+
+    for date in datesForCreatedContent:
+        labels.append(date[0])
+        values.append(date[1])
+        #print(date[0] +"  ------   "+str(date[1]))
+
+    return JsonResponse({"labels": labels, "values": values })
 
 def projects(request, type_content):
     if (type_content == "software"):

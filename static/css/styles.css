@@ -749,7 +749,15 @@ footer .local-logo:hover {
   padding-top: 15vh;
 }
 
-.dashboard-bar {
+.bar-container header {
+  margin-top: 3em;
+}
+
+.bar-container header h2, .bar-container header h3 {
+  text-align: center;
+}
+
+.bar-container .dashboard-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -763,24 +771,24 @@ footer .local-logo:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 80px;
+  margin-top: 20px;
   text-align: center;
   color: var(--cinza-escuro);
 }
 
-.dashboard-bar .bar .text-bar {
-  margin-top: 15px;
+.bar-container .dashboard-bar .bar .text-bar {
+  margin-top: 2em;
   width: 230px;
   height: 150px;
   text-align: center;
 }
 
-.dashboard-bar .bar .text-bar .txt-dash-one {
+.bar-container .dashboard-bar .bar .text-bar .txt-dash-one {
   font-size: 22px;
   color: var(--azul-escuro);
 }
 
-.dashboard-bar .bar .text-bar .txt-dash-two {
+.bar-container .dashboard-bar .bar .text-bar p {
   color: #ff6384;
   font-size: 20px;
 }
@@ -965,7 +973,7 @@ footer .local-logo:hover {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 90%;
-    padding: .5em;
+    padding: 0.5em;
     margin: auto;
     margin-top: 2em;
   }

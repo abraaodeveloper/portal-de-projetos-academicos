@@ -10,6 +10,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('project/<project_slug>', project, name="project"),
     path('projects/<type_content>', projects, name="projects"),
+    path('getstatistic/', getStatiscs, name="getstatistic"),
 
     path('sendcomment/<project_slug>', sendComment, name="sendcomment"),
 
