@@ -12,31 +12,16 @@ from django.contrib.auth.decorators import login_required
 def createEbook(request):
     form = EbookForm(request.POST or None)
     user = request.user
-    softs = user.soft_set.all()
 
-    context = {}
     if request.method == 'POST':
+        form = EbookForm(request.POST, request.FILES)
         if form.is_valid():
-
-            uploaded_file = request.FILES['document']
-            fs = FileSystemStorage()
-            mainfile = fs.save(uploaded_file.name, uploaded_file)
-            context['url'] = fs.url(mainfile)
-
-            uploaded_file = request.FILES['cover']
-            fs = FileSystemStorage()
-            cover = fs.save(uploaded_file.name, uploaded_file)
-            context['url'] = fs.url(cover)
-
-            form.instance.file_name = mainfile
-            form.instance.cover = cover
-
             form.instance.author = request.user
             form.instance.viwes = 0
             form.save()
 
-            return render(request, 'logged/dashboard.html', {'softs': softs})
-    return render(request, 'logged/post-edit.html', {'softs': softs, 'form':form})
+            return redirect('dashboard')
+    return render(request, 'logged/post-edit.html', {'form':form})
 
 @login_required
 def updateEbook(request, ebook_id):

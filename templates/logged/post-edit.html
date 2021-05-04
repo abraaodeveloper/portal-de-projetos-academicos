@@ -11,16 +11,14 @@
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form|crispy }}
-    <p>
-      <label for="">Arquivo principal:</label>
-      <input type="file" style="margin: 1em 0;" name="document"><br>
-    </p>
-    <p>
-      <label for="">Capa:</label>
-      <input type="file" style="margin: 1em 0;" name="cover"><br>
-    </p>
-    
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+    <button type="submit" class="btn btn-primary mt-2 mb-2">
+      {% if form.instance.author %}
+        Editar
+      {% else %}
+        Cadastrar
+      {% endif %}
+    </button>
   </form>
 </div>
 {% endblock %}

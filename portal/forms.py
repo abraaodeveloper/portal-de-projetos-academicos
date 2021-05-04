@@ -13,12 +13,15 @@ class SoftForm(forms.ModelForm):
             "language": "Linguagem", 
             "content": "Conteúdo principal", 
             "versions": "Versão",
+            "file_name": "Arquivo",
+            "cover": "Logo ou icone",
         }
         fields = [
             "id", "title",
             "resume", "slug", 
             "language", "content",
-            "versions"
+            "versions", "file_name",
+            "cover",
         ]
 
 class EbookForm(forms.ModelForm):
@@ -35,6 +38,8 @@ class EbookForm(forms.ModelForm):
             "qtd_pages": "Quantidade de páginas", 
             "content": "Conteúdo principal", 
             "edition": "Edição",
+            "file_name": "Arquivo",
+            "cover": "Capa",
         }
 
         widgets = {
@@ -45,7 +50,8 @@ class EbookForm(forms.ModelForm):
             "resume", "slug", 
             "language", "keyword", 
             "qtd_pages", "content", 
-            "edition"
+            "edition", "file_name",
+            "cover",
         ]
 
 class CommentForm(forms.ModelForm):
