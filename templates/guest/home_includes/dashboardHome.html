@@ -11,11 +11,7 @@
                 <div class="squad-container">
                     <div class="text-container-projects shadow-lg p-3 mb-5 bg-body rounded">
                         <div class="img-project">
-                            {% if post.cover %}
-                            <img class="shadow" src="{{post.cover.url}}" alt="">
-                            {% else %}
                             <img class="shadow" src="/static/img/imgHome/img-test.jpg" alt="">
-                            {% endif %}
                         </div>
                         <div class="text-project">
                             <a href="/project/{{post.slug}}">{{post.title}}</a>
