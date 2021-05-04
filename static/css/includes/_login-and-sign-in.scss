@@ -4,53 +4,15 @@
     justify-content: center;
     align-items: center;
 
-    li{
-        color: whitesmoke;
-    }
-
     .m-card-login{
-        background-color: $azul-escuro;
+        padding: 2em;
 
-        padding: 3em;
-        border-radius: .5em;
-
-        h2{
-            border: 1px solid $cinza-claro;
-            border-radius: .3em;
-            font-size: x-large;
-            padding: .2em 1em .2em 1em;
-            text-align: center;
-            color: $cinza-claro;
+        button{
+            margin-top: 1em;
         }
-
-        form{
-            margin-top: 50px;
-
-            p{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-    
-                label{
-                    margin-right: 1em;
-                }
-            }
-    
-            label, h2{
-                color: $cinza-claro;
-                margin: .5em;
-            }     
-            
-            input{
-                border: 1px solid $cinza-claro;
-                border-radius: .3em;
-                background-color: $azul-escuro;
-            }
-        }
-
-
     }
 }
+
 .django-ckeditor-widget {
      width: 100%;
 

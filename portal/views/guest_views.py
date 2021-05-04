@@ -27,19 +27,17 @@ def home(request):
     ebooks = Ebook.objects.all().order_by('-views')[:3:1]
 
     result = softs + ebooks
-
+    print(result)
     if(not(len(result) < 3)):
-        cont = 0
         ordenado = False
-        while(cont < len(result)-1 and not(ordenado)):
+        
+        while not ordenado:
             ordenado = True
-            if(result[cont].views < result[cont+1].views):
-                ordenado = False
-                key = result[cont]
-                result[cont] = result[cont+1]
-                result[cont+1] = key
-            cont +=1
-
+            for i in range(len(result)-1):
+                if(result[i].views < result[i+1].views):
+                    result[i], result[i+1] = result[i+1], result[i]
+                    ordenado = False
+    print(result)
     users = User.objects.all()
 
     return render(request, 'guest/index.html', {

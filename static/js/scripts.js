@@ -44,10 +44,6 @@ getJSON("/getstatistic",
                 }
             }
             
-            nResultLabels.reverse()
-            nResultValues.reverse()
-            
-  
             // chart.js
             const labels = nResultLabels;
 

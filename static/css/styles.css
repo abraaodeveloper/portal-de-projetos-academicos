@@ -522,55 +522,12 @@ footer .local-logo:hover {
           align-items: center;
 }
 
-.m-container-login li {
-  color: whitesmoke;
-}
-
 .m-container-login .m-card-login {
-  background-color: #395D73;
-  padding: 3em;
-  border-radius: .5em;
+  padding: 2em;
 }
 
-.m-container-login .m-card-login h2 {
-  border: 1px solid #F5F5F5;
-  border-radius: .3em;
-  font-size: x-large;
-  padding: .2em 1em .2em 1em;
-  text-align: center;
-  color: #F5F5F5;
-}
-
-.m-container-login .m-card-login form {
-  margin-top: 50px;
-}
-
-.m-container-login .m-card-login form p {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.m-container-login .m-card-login form p label {
-  margin-right: 1em;
-}
-
-.m-container-login .m-card-login form label, .m-container-login .m-card-login form h2 {
-  color: #F5F5F5;
-  margin: .5em;
-}
-
-.m-container-login .m-card-login form input {
-  border: 1px solid #F5F5F5;
-  border-radius: .3em;
-  background-color: #395D73;
+.m-container-login .m-card-login button {
+  margin-top: 1em;
 }
 
 .django-ckeditor-widget {
@@ -648,6 +605,14 @@ footer .local-logo:hover {
 
 .m-post .comments button {
   margin: 1em;
+}
+
+.m-img-card {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .text-projects {

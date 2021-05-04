@@ -17,4 +17,5 @@ btnLogo.addEventListener("click", () => {
 
 window.onscroll = function () {
     divCardUser.style.display = "none";
+    iconUser.src = "/static/img/imgHome/user.svg";
 }
