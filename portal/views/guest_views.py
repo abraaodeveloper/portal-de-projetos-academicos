@@ -132,3 +132,6 @@ def sendComment(request, project_slug):
         print()
 
     return redirect('home')
+
+def about(request):
+    return render(request, 'guest/about.html')

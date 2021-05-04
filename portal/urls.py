@@ -13,6 +13,7 @@ urlpatterns = [
     path('getstatistic/', getStatiscs, name="getstatistic"),
 
     path('sendcomment/<project_slug>', sendComment, name="sendcomment"),
+    path('about/', about, name="about"),
 
     # user logged
     path('dashboard/', dashboard, name="dashboard"),
