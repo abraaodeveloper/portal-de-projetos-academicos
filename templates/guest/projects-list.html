@@ -8,12 +8,21 @@
             {{post.type_content}}
         </div>
         <div class="card-body">
-            <div>
-                <h5 class="card-title">{{post.title}}</h5>
-                <h3>{{post.resume}}</h3>
-                <p class="card-text">{{post.content}}</p>
-                <p>{{post.views}} visualizações</p>
-                <a class="btn btn-primary" href="/project/{{post.slug}}">Ver post '{{post.title}}' completo</a>
+            <div style="justify-content: space-between;" class="card-body d-flex flex-row">
+                <div>
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <h3>{{post.resume}}</h3>
+                    <p class="card-text">{{post.content}}</p>
+                    <p>{{post.views}} visualizações</p>
+                    <a class="btn btn-primary" href="/project/{{post.slug}}">Ver post '{{post.title}}' completo</a>
+                </div>
+                <div style="margin-right: 2em;">
+                    {% if post.cover %}
+                    <img class="m-img-card shadow" src="{% url '{{post.cover.url}}'%}" alt="">
+                    {% else %}
+                    <img class="m-img-card shadow" src="/static/img/imgHome/img-test.jpg" alt="">
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>

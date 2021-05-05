@@ -18,9 +18,11 @@
 
         <div class="footer-post">
             <p>Visualizações:{{post.views}}</p>
-            <div class="d-flex flex-column justify-content-end">
+            <div class="d-flex flex-column justify-content-end">    
                 <a class="btn btn-outline-success" href="{{post.file_name.url}}" download="file.txt">Download do arquivo principal</a>
+                {% if post.cover %}
                 <a class="btn btn-outline-success mt-2" href="{{post.cover.url}}" downloaddownload="file.txt">Download da capa</a>
+                {% endif %}
             </div>
         </div>
         <div class="comments card">
