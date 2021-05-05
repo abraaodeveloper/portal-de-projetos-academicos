@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+  {% extends 'base.html' %}
 
 {% load crispy_forms_tags %}
 
@@ -18,12 +18,7 @@
 
         <div class="footer-post">
             <p>Visualizações:{{post.views}}</p>
-            <div class="d-flex flex-column justify-content-end">    
-                <a class="btn btn-outline-success" href="{{post.file_name.url}}" download="file.txt">Download do arquivo principal</a>
-                {% if post.cover %}
-                <a class="btn btn-outline-success mt-2" href="{{post.cover.url}}" downloaddownload="file.txt">Download da capa</a>
-                {% endif %}
-            </div>
+            <a class="btn btn-outline-success" href="{{post.file_name.url}}" download="file.txt">Download</a>
         </div>
         <div class="comments card">
             <div class="card-header">
