@@ -6,6 +6,10 @@
   list-style-type: none;
 }
 
+.imgDev{
+  margin-left: 15%;
+}
+
 :root {
   --cinza-escuro: #54565B;
   --azul-claro: #A7CBD9;
