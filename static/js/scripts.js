@@ -48,7 +48,7 @@ getJSON("/getstatistic",
                 let dat = nResultLabels[i].split("-");
                 orderList.push([parseInt(dat[0] + dat[1] + dat[2]), parseInt(i)]);
             }
-            console.log(orderList);
+
             let bubbleSort = (inputArr) => {
                 let len = inputArr.length;
                 let swapped;
@@ -67,7 +67,6 @@ getJSON("/getstatistic",
             };
 
             let ordenado = bubbleSort(orderList);
-            console.log(ordenado);
 
             const nLabl = [];
             const nResl = [];
@@ -90,7 +89,7 @@ getJSON("/getstatistic",
             };
 
             const config = {
-                type: 'bar',
+                type: 'line',
                 data,
                 options: {}
             };
