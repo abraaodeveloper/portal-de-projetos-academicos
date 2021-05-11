@@ -22,10 +22,11 @@ getJSON("/getstatistic",
 
         } else {
             let rLabels = d.labels;
-            let rValues = d.values;
 
             let nResultLabels = [rLabels[0]]
             let nResultValues = [0]
+
+            console.log(nResultLabels);
 
             for(i in rLabels){
                 let isEqual = false;
@@ -50,7 +51,7 @@ getJSON("/getstatistic",
             const data = {
                 labels: labels,
                 datasets: [{
-                    label: 'Quantidade de novos posts por dia',
+                    label: 'Quantidade de novos projetos por dia',
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
                     data: nResultValues,
@@ -58,7 +59,7 @@ getJSON("/getstatistic",
             };
 
             const config = {
-                type: 'line',
+                type: 'bar',
                 data,
                 options: {}
             };
@@ -69,4 +70,3 @@ getJSON("/getstatistic",
             );
         }
     });
-
