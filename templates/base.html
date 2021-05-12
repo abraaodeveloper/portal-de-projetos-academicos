@@ -23,6 +23,9 @@
 <body>
     {% include "includes/navbar.html" %}
     <main>
+        {% block breadcrumb %}
+        
+        {% endblock breadcrumb %}
         {% block content %}
         {% endblock content %}
     </main>

@@ -89,7 +89,7 @@ getJSON("/getstatistic",
             };
 
             const config = {
-                type: 'line',
+                type: 'bar',
                 data,
                 options: {}
             };

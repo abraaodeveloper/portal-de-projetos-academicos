@@ -1,4 +1,14 @@
 {% extends 'base.html' %}
+{% block breadcrumb %}
+<div class="container" style="padding: 2em;">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Início</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+        </ol>
+    </nav>
+</div>
+{% endblock breadcrumb %}
 {% block title %}Dashboard{% endblock %}
 
 {% load static %}

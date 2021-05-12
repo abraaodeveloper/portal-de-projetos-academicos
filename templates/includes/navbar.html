@@ -3,13 +3,23 @@
         <div class="container d-flex d-flex-row">
             <div class="nav-logo d-flex d-flex-row">
                 <div class="user">
-                    <div class="user" style="cursor: pointer;">
+                    <div class="user" style="cursor: pointer;" data-toggle="popover" title="Quer Colaborar?"
+                        data-content="Então crie o se cadastro ou e faça login aqui!">
                         <img src="/static/img/imgHome/user.svg" id="icon-user" alt="user">
                     </div>
+                    <script>
+                        $(function () {
+                            $('.user').popover({
+                                container: 'body'
+                            })
+                        })()
+                    </script>
                 </div>
 
                 <div class="logo">
-                    <a href="/" style="color: #A7CBD9;"><h1>UPEProjects</h1></a>
+                    <a href="/" style="color: #A7CBD9;">
+                        <h1>UPEProjects</h1>
+                    </a>
                 </div>
 
                 <div class="card" id="m-card-user">
@@ -20,7 +30,8 @@
                             <p>Olá, {{ user.username }}!</p>
                         </li>
                         <li class="btn-card-user"><a class="txt-user">Oi {{ user.username }}!</a></li>
-                        <li class="btn-card-user"><a href="{% url 'logout' %}" style="color: rgb(246, 89, 89);">Sair</a></li>
+                        <li class="btn-card-user"><a href="{% url 'logout' %}" style="color: rgb(246, 89, 89);">Sair</a>
+                        </li>
                         {% else %}
                         <li class="info-user-nav">
                             <img src="/static/img/imgHome/user-white.svg" alt="user">
@@ -37,8 +48,8 @@
                     <li class="dropdown">
                         <div onclick="myFunction()" class="dropbtn dropdown-toggle">Projetos</div>
                         <div id="myDropdown" class="dropdown-content">
-                          <a href="/projects/software">Softwares</a>
-                          <a href="/projects/ebook">E-books</a>
+                            <a href="/projects/software">Softwares</a>
+                            <a href="/projects/ebook">E-books</a>
                         </div>
                     </li>
                     <li><a class="m-item-menu" href="{% url 'about' %}">Sobre</a></li>

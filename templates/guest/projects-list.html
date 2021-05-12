@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
-
+{% block breadcrumb %}
+<div class="container" style="padding: 2em;">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Início</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Projetos</li>
+        </ol>
+    </nav>
+</div>
+{% endblock breadcrumb %}
 {% block content %}
 <div class="container">
     {% for post in posts %}
